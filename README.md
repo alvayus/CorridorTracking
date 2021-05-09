@@ -5,6 +5,8 @@ En este proyecto se realiza una aplicación para la detección de suelo en pasil
 
 ## Dependencias principales (PixelLib + Mi código)
 
+## Modelo de segmentación de PixelLib Ade20k
+
 ## Funciones principales
 
 -- TODO: Comentar todas las funciones
