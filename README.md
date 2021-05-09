@@ -3,6 +3,8 @@ En este proyecto se realiza una aplicación para la detección de suelo en pasil
 
 -- TODO: Extender más. Hablar de la aplicación en sí, en qué está basado (PixelLib) y un resumen por encima. Comentar carpetas de prueba
 
+## Dependencias principales (PixelLib + Mi código)
+
 ## Funciones principales
 
 -- TODO: Comentar todas las funciones
