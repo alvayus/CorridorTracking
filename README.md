@@ -58,3 +58,8 @@ Esta función se utiliza principalmente para evitar que las imágenes mostradas 
 #### 4. extractFloor
 Esta función permite la extracción de las zonas clasificadas como _suelo_ por el modelo Ade20k. Para ello, se tiene en cuenta el hecho de que el modelo asocia a las zonas de tipo _suelo_ el color RGB \[50, 50, 80\]. También se tiene en cuenta el hecho de que las áreas segmentadas no tienen los bordes especialmente definidos, algo que se intenta solucionar proporcionando un rango pequeño de colores en torno al color objetivo.
 
+#### 5. limpiaMemoria
+Esta función permite vaciar los arrays de memoria utilizados para el cálculo de la dirección del pasillo, empleados en la función floorAndContours que queda explicada más abajo.
+
+#### 6. midPoints
+Esta función implementa la extracción de los dos puntos clave para la obtención de la dirección del pasillo
