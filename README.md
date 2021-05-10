@@ -62,10 +62,10 @@ Esta función permite la extracción de las zonas clasificadas como _suelo_ por 
 Esta función permite vaciar los arrays de memoria utilizados para el cálculo de la dirección del pasillo, empleados en la función floorAndContours que queda explicada más abajo.
 
 #### 6. midPoints
-Esta función implementa la extracción de los dos puntos clave para la obtención de la dirección del pasillo, y supone prácticamente la mitad del código implementado. Queda dividida en varias partes:
+Esta función implementa la extracción de los dos puntos clave para la obtención de la dirección del pasillo, y supone prácticamente la mitad del código implementado. Para dicha extracción se utiliza una aproximación poligonal a la zona extraída con la función extractFloor. La función queda dividida en varias partes:
 
 ##### Búsqueda inicial
 Inicialmente se buscan los dos puntos de menor (punto superior) y menor (punto inferior) coordenada Y. 
 
 ##### Punto medio del segmento superior
-Puesto que el punto anterior supone 
+Puesto que el polígono que aproxima la zona extraída no tiene por qué ser necesariamente un triángulo, se añaden una serie de mejoras que intentan contemplar diversos casos. Esta es la primera de las mejoras.
