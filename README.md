@@ -42,7 +42,7 @@ python3 main.py
 ### Adición de más imágenes y videos
 Es posible añadir más imágenes y videos con los que poder ejecutar el algoritmo. En el caso de las imágenes, estas tienen que tener formato **.jpg** y ser añadidas a la carpeta **img**. Para los videos, el formato aceptado es **.mp4** y deben ser añadidos a la carpeta **video**. 
 
-## Estudio
+## Estudio de la implementación
 ### Funciones
 En este apartado se pretende dar una idea general del contenido del fichero main.py para acercar al lector los algoritmos utilizados, explicando por encima todas las funciones implementadas:
 
@@ -62,4 +62,10 @@ Esta función permite la extracción de las zonas clasificadas como _suelo_ por 
 Esta función permite vaciar los arrays de memoria utilizados para el cálculo de la dirección del pasillo, empleados en la función floorAndContours que queda explicada más abajo.
 
 #### 6. midPoints
-Esta función implementa la extracción de los dos puntos clave para la obtención de la dirección del pasillo
+Esta función implementa la extracción de los dos puntos clave para la obtención de la dirección del pasillo, y supone prácticamente la mitad del código implementado. Queda dividida en varias partes:
+
+##### Búsqueda inicial
+Inicialmente se buscan los dos puntos de menor (punto superior) y menor (punto inferior) coordenada Y. 
+
+##### Punto medio del segmento superior
+Puesto que el punto anterior supone 
