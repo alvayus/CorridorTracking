@@ -62,7 +62,7 @@ Esta función permite la extracción de las zonas clasificadas como _suelo_ por 
 Esta función permite vaciar los arrays de memoria utilizados para el cálculo de la dirección del pasillo, empleados en la función floorAndContours que queda explicada más abajo.
 
 #### 6. midPoints
-Esta función implementa la extracción de los dos puntos clave para la obtención de la dirección del pasillo, y supone prácticamente la mitad del código implementado. Para dicha extracción se utiliza una aproximación poligonal a la zona extraída con la función extractFloor. La función queda dividida en varias partes:
+Esta función implementa la extracción de los **dos puntos clave (superior e inferior)** para la obtención de la dirección del pasillo, y supone prácticamente la mitad del código implementado. Para dicha extracción se utiliza una aproximación poligonal a la zona extraída con la función extractFloor. La función queda dividida en varias partes:
 
 ##### Búsqueda inicial
 Inicialmente se buscan los dos puntos de menor (punto superior) y menor (punto inferior) coordenada Y. 
@@ -72,4 +72,10 @@ Puesto que el polígono que aproxima la zona extraída no tiene por qué ser nec
 
 Sea **minY** el punto de menor coordenada Y (punto superior) y **pSig y pAnt** el punto siguiente y anterior respectivamente en la aproximación poligonal (formado por un conjunto de puntos cuyo orden determina los segmentos de la misma), inicialmente se calculan los puntos medios de los **segmentos minY-pAnt y minY-pSig**, así como las pendientes entre estos nuevos puntos medios y el punto minY.
 
+Una vez calculadas estas pendientes, se usan dichos valores para determinar si el punto minY se corresponde con la punta de un triángulo, en cuyo caso sería el punto minY sería el punto superior devuelto por la función. Para ello, los valores absolutos de cada una de las pendientes debe ser elevado (\> 0.6). Por otro lado, también se toma el punto minY como punto superior si las pendientes son parecidas (diferencia en valor absoluto < 0.25).
 
+Por otro lado, si esto no ocurre, se comprueba si la diferencia entre los puntos medios calculados y minY es pequeña (por debajo de un umbral, denominado **radioError**), en cuyo caso el punto devuelto será la media de todos los puntos que se encuentren a una distancia < radioError del punto minY. Esto permite paliar defectos producidos por la aparición de una gran cantidad de puntos en la parte superior de la aproximación poligonal de la zona extraída.
+
+Si ninguna de las dos condiciones anteriores se da, se tomará como punto superior uno de los dos puntos medios calculados, concretamente el que tenga menor coordenada Y.
+
+##### 
