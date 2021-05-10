@@ -5,6 +5,17 @@ En el repositorio se pueden encontrar las imágenes y los videos de prueba más 
 
 Por otro lado, para la segmentación semántica se utiliza el modelo [Ade20k](https://github.com/ayoolaolafenwa/PixelLib/releases/download/1.3/deeplabv3_xception65_ade20k.h5) referenciado en la API de [PixelLib](https://pixellib.readthedocs.io/en/latest/image_ade20k.html). **Es necesario descargar este modelo y colocarlo dentro de la carpeta SemanticSegmentation, junto al programa main.py**.
 
+A continuación, se facilitan los diferentes apartados de este readme:
+
+- [CorridorTracking](#corridortracking)
+  * [Ejecución](#ejecución)
+    + [Dependencias principales](#dependencias-principales)
+    + [Lanzamiento](#lanzamiento)
+    + [Adición de más imágenes y videos](#adición-de-más-imágenes-y-videos)
+  * [Estudio](#estudio)
+    + [Funciones principales](#funciones-principales)
+      - [1. imageSemanticSegmentation](#1-imagesemanticsegmentation)
+
 ## Ejecución
 Para la ejecución del programa es necesario descargar y colocar el modelo de segmentación tal y como queda explicado en el apartado anterior, así como instalar las dependencias que se comentan más abajo.
 
@@ -20,6 +31,22 @@ La instalación de estas dependencias se realiza con pip, tal y como se detalla 
 * OpenCV (versión 4.5.1.48)
 * numpy (versión 1.19.5)
 
-### Funciones principales
+### Lanzamiento
+Una vez instaladas las dependencias indicadas anteriormente, para lanzar el programa basta con llamar al intérprete de Python:
 
--- TODO: Comentar todas las funciones
+```diff
+python3 main.py
+```
+
+**Nota:** El código implementado ha sido ideado para Python 3. En caso de usar Python 2, inicialmente sería necesario especificar el uso de UTF-8 para evitar errores de ejecución.
+
+### Adición de más imágenes y videos
+Es posible añadir más imágenes y videos con los que poder ejecutar el algoritmo. En el caso de las imágenes, estas tienen que tener formato **.jpg** y ser añadidas a la carpeta **img**. Para los videos, el formato aceptado es **.mp4** y deben ser añadidos a la carpeta **video**. 
+
+## Estudio
+### Funciones principales
+En este apartado se pretende dar una idea general del contenido del fichero main.py para acercar al lector los algoritmos utilizados, explicando por encima todas las funciones implementadas:
+
+#### 1. imageSemanticSegmentation
+
+
