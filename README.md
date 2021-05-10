@@ -78,4 +78,11 @@ Por otro lado, si esto no ocurre, se comprueba si la diferencia entre los puntos
 
 Si ninguna de las dos condiciones anteriores se da, se tomará como punto superior uno de los dos puntos medios calculados, concretamente el que tenga menor coordenada Y.
 
-##### 
+##### Punto medio del segmento inferior
+En este caso, la casuística es aún más compleja. Inicialmente es necesario estudiar si el suelo mostrado en la imagen choca con los límites laterales del frame, puesto que será un hecho bastante relevante a la hora de calcular el punto medio del segmento inferior. De esta forma, inicialmente se buscan todos los puntos con coordenada X = 0 o X = width-1, donde width es el ancho del frame.
+
+A continuación, en función de los resultados de la búsqueda, se pueden dar cuatro casos:
+1. Puntos en el lateral izquierdo y no en el lateral derecho
+2. Puntos en el lateral derecho y no en el izquierdo
+3. Puntos en ambos laterales
+4. Sin puntos en ninguno de los laterales
