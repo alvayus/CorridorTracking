@@ -93,3 +93,8 @@ Para los dos primeros casos, el proceso consiste en encontrar la esquina inferio
 En el caso 3, en el que ambos laterales se solapan con el límite del frame, es necesario realizar un proceso parecido, pero en el que no se realiza la búsqueda de esquinas inferiores y, además, es necesario trazar 2 líneas imaginarias y no 1. Puesto que cada lateral necesitaba una referencia de altura del lateral opuesto, concretamente el punto esquina inferior, ahora hace falta sustituirlo por otro punto. La mejor opción en este caso es tomar como referencia la altura del punto de mayor coordenada Y que se encuentra en el lateral correspondiente. El resto del proceso es idéntico al explicado anteriormente.
 
 En el caso 4, en el que no existen puntos en los laterales del frame, se sigue un proceso más parecido al seguido para la obtención del punto medio del segmento superior, aunque bastante más simple. La solución de defectos en la parte inferior de la aproximación poligonal (más de 1 segmento) no es tan sofisticada como para el caso del segmento superior, si bien es poco frecuente, por la propia forma del pasillo, que esto ocurra.
+
+#### 7. floorAndContours
+Esta función realiza la extracción del suelo de un frame pasado como input, además de un par de operaciones morfológicas para "pulir" dicha zona (cierre con un kernel de tamaño 5 y apertura con un kernel de tamaño 3). A continuación, busca los contornos de la zona extraída y realiza la aproximación poligonal que posteriormente se pasa como entrada a la función midPoints, explicada anteriormente.
+
+Una vez extraído los puntos clave con la función midPoints, estos se almacenan en los dos arrays de memoria (uno para los puntos superiores y otro para los puntos inferiores) mencionados en la función limpiaMemoria
