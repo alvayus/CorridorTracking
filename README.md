@@ -81,8 +81,12 @@ Si ninguna de las dos condiciones anteriores se da, se tomará como punto superi
 ##### Punto medio del segmento inferior
 En este caso, la casuística es aún más compleja. Inicialmente es necesario estudiar si el suelo mostrado en la imagen choca con los límites laterales del frame, puesto que será un hecho bastante relevante a la hora de calcular el punto medio del segmento inferior. De esta forma, inicialmente se buscan todos los puntos con coordenada X = 0 o X = width-1, donde width es el ancho del frame.
 
-A continuación, en función de los resultados de la búsqueda, se pueden dar cuatro casos:
+A continuación, en función de los resultados de la búsqueda, se pueden dar **cuatro casos**:
+
 1. Puntos en el lateral izquierdo y no en el lateral derecho
 2. Puntos en el lateral derecho y no en el izquierdo
 3. Puntos en ambos laterales
 4. Sin puntos en ninguno de los laterales
+
+Para los dos primeros casos, el proceso consiste en encontrar la esquina inferior del lateral contrario (punto que no choca con su límite lateral) y obtener la pendiente entre el punto **pLateral** y el contiguo (punto anterior, **pAnt**, en el caso del punto lateral izquierdo y punto siguiente, **pSig**, en el caso del punto lateral derecho, ya que la ordenación de puntos en la aproximación poligonal es antihoraria). Dicha pendiente se usa para, mediante la ecuación de la recta, trazar una línea imaginaria que choque con la línea horizontal a la altura de la coordenada Y de la esquina inferior, cuya intersección será el punto de corte que interesa calcular (**pCorte**). De esta forma, la coordenada X del punto devuelto (segmento inferior) sería la media de la coordenada X del punto pCorte y el punto esquina, siendo la coordenada Y la misma que la del punto esquina.
+
