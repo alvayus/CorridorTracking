@@ -8,12 +8,25 @@ Por otro lado, para la segmentación semántica se utiliza el modelo [Ade20k](ht
 A continuación, se facilitan los diferentes apartados de este readme:
 
 - [Ejecución](#ejecución)
-   + [Dependencias principales](#dependencias-principales)
-   + [Lanzamiento](#lanzamiento)
-   + [Adición de más imágenes y videos](#adición-de-más-imágenes-y-videos)
- - [Estudio](#estudio)
-   + [Funciones principales](#funciones)
-     - [1. imageSemanticSegmentation](#1-imagesemanticsegmentation)
+  * [Dependencias principales](#dependencias-principales)
+  * [Lanzamiento](#lanzamiento)
+  * [Adición de más imágenes y videos](#adición-de-más-imágenes-y-videos)
+- [Estudio de la implementación](#estudio-de-la-implementación)
+  * [Funciones](#funciones)
+    + [1. imageSemanticSegmentation](#1-imagesemanticsegmentation)
+    + [2. videoSemanticSegmentation](#2-videosemanticsegmentation)
+    + [3. rescale](#3-rescale)
+    + [4. extractFloor](#4-extractfloor)
+    + [5. limpiaMemoria](#5-limpiamemoria)
+    + [6. midPoints](#6-midpoints)
+      - [Búsqueda inicial](#búsqueda-inicial)
+      - [Punto medio del segmento superior](#punto-medio-del-segmento-superior)
+      - [Punto medio del segmento inferior](#punto-medio-del-segmento-inferior)
+    + [7. floorAndContours](#7-floorandcontours)
+    + [8. imageProcessing](#8-imageprocessing)
+    + [9. videoProcessing](#9-videoprocessing)
+    + [10. camaraProcessing](#10-camaraprocessing)
+    + [11. main](#11-main)
 
 ## Ejecución
 Para la ejecución del programa es necesario descargar y colocar el modelo de segmentación tal y como queda explicado en el apartado anterior, así como instalar las dependencias que se comentan más abajo.
