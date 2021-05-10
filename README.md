@@ -69,3 +69,7 @@ Inicialmente se buscan los dos puntos de menor (punto superior) y menor (punto i
 
 ##### Punto medio del segmento superior
 Puesto que el polígono que aproxima la zona extraída no tiene por qué ser necesariamente un triángulo, se añaden una serie de mejoras que intentan contemplar diversos casos. Esta es la primera de las mejoras.
+
+Sea **minY** el punto de menor coordenada Y (punto superior) y **pSig y pAnt** el punto siguiente y anterior respectivamente en la aproximación poligonal (formado por un conjunto de puntos cuyo orden determina los segmentos de la misma), inicialmente se calculan los puntos medios de los **segmentos minY-pAnt y minY-pSig**, así como las pendientes entre estos nuevos puntos medios y el punto minY.
+
+
