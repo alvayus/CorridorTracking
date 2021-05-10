@@ -97,4 +97,16 @@ En el caso 4, en el que no existen puntos en los laterales del frame, se sigue u
 #### 7. floorAndContours
 Esta función realiza la extracción del suelo de un frame pasado como input, además de un par de operaciones morfológicas para "pulir" dicha zona (cierre con un kernel de tamaño 5 y apertura con un kernel de tamaño 3). A continuación, busca los contornos de la zona extraída y realiza la aproximación poligonal que posteriormente se pasa como entrada a la función midPoints, explicada anteriormente.
 
-Una vez extraído los puntos clave con la función midPoints, estos se almacenan en los dos arrays de memoria (uno para los puntos superiores y otro para los puntos inferiores) mencionados en la función limpiaMemoria
+Una vez extraído los puntos clave con la función midPoints, estos se almacenan en los dos arrays de memoria (uno para los puntos superiores y otro para los puntos inferiores) mencionados en la función limpiaMemoria. De esta forma, los puntos usados finalmente para dibujar la dirección del pasillo nacen del cálculo de la media, por separado, de los dos arrays de memoria. El parámetro **n_mem** define el número de frames de memoria de dichos arrays. Al aumentar este parámetro, la dirección varía de forma más estable, si bien también lo hace de forma más lenta.
+
+#### 8. imageProcessing
+Esta función implementa la aplicación del programa a las imágenes, haciendo uso de la función imageSemanticSegmentation. En este caso, la imagen objetivo debe ser única, si bien la búsqueda de imágenes sin segmentar en la función imageSemanticSegmentation se realiza para la carpeta completa.
+
+#### 9. videoProcessing
+Esta función implementa la aplicación del programa a un video, haciendo uso de la función videoSemanticSegmentation.
+
+#### 10. camaraProcessing
+Esta función implementa la aplicación del programa a una cámara. En este caso, el procesamiento de cada frame extraído de la cámara se realiza de forma independiente. Esta función permite medir el rendimiento de procesamiento continuo (tanto de la segmentación semántica como de la obtención de la dirección de la imagen que se devuelve como resultado).
+
+#### 11. main
+En la función de entrada al código se define el menú de consola utilizado por el usuario, en el cual puede elegir una de las tres opciones anteriores: procesamiento de imagen, procesamiento de video o procesamiento de cámara.
