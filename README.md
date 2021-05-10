@@ -52,3 +52,9 @@ Esta función es llamada al seleccionar la primera opción del menú principal d
 #### 2. videoSemanticSegmentation
 Esta función es llamada al seleccionar la segunda opción del menú principal de la aplicación (videos). Si el video especificado (en el caso de existir) no tiene asociado un video con la terminación "\_seg", se realiza su segmentación semántica haciendo uso del modelo Ade20k. Al igual que con la función anterior, al finalizar el proceso se muestran los tiempos por consola.
 
+#### 3. rescale
+Esta función se utiliza principalmente para evitar que las imágenes mostradas por pantalla tengan una resolución mayor que la resolución de la misma, de tal forma que no se puedan visualizar correctamente los resultados del programa. Para ello, se fija un tamaño máximo de 600 píxeles. La dimensión (alto o ancho) que tenga mayor tamaño y supere este tamaño máximo queda limitada al mismo, y la dimensión restante queda reescalada en la misma proporción.
+
+#### 4. extractFloor
+Esta función permite la extracción de las zonas clasificadas como _suelo_ por el modelo Ade20k. Para ello, se tiene en cuenta el hecho de que el modelo asocia a las zonas de tipo _suelo_ el color RGB \[50, 50, 80\]. También se tiene en cuenta el hecho de que las áreas segmentadas no tienen los bordes especialmente definidos, algo que se intenta solucionar proporcionando un rango pequeño de colores en torno al color objetivo.
+
